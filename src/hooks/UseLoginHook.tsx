@@ -1,27 +1,27 @@
 import { useState } from "react"
 
 interface userLogin {
-    "username": string;
-    "password": string;
-    "handlePasswordChange":  (event: React.ChangeEvent<HTMLInputElement>) => void;
-    "handleUserNameChange":  (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+    dataInput: {
+        username: string,
+        password: string,
+    }
+    "handleDataInput":  (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const UseHookLogin = ():userLogin => {
-    const [ username, setUsername ] = useState('')
-    const [ password, setPassword ] = useState('')
+    const [ dataInput, setDataInput ] = useState({ username: '', password: '' })
 
-    const handleUserNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setUsername(event.target.value)
-    }
-    const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(event.target.value)
+    const handleDataInput = (event: React.ChangeEvent<HTMLInputElement>) => {  
+        const { name, value} = event.target
+        setDataInput((data) => ({
+            ...data,
+            [name]: value,
+        }))
     }
 
     return({
-        handlePasswordChange, 
-        handleUserNameChange, 
-        username, 
-        password
+        dataInput,
+        handleDataInput, 
     })
 }

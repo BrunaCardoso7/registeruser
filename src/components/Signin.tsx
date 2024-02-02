@@ -5,28 +5,32 @@ import { TitlePrimary } from "./Text/TitlePrimary";
 import { Link } from "react-router-dom";
 export const Signin: React.FC = () =>{
     const { 
-        username, 
-        password, 
-        handlePasswordChange, 
-        handleUserNameChange 
+        dataInput,
+        handleDataInput 
     } = UseHookLogin()
 
     return(
-        <div  className="bg-slate-400 w-fit p-10 flex items-center justify-center flex-col gap-5 rounded-xl">
+        <div  className="bg-slate-400 w-fit p-10 m-32 flex items-center justify-center flex-col gap-5 rounded-xl">
             <TitlePrimary
                 title="Login"
             />
             <Input
                 placeholder="username"
                 type="text"
-                value={username}
-                onChange={handleUserNameChange}
+                value={dataInput.username}
+                onChange={}
+            />
+            <Input
+                placeholder="idade"
+                type="text"
+                value={dataInput.password}
+                onChange={handleDataInput}
             />
             <Input
                 placeholder="password"
                 type="text"
-                value={password}
-                onChange={handlePasswordChange}
+                value={dataInput.password}
+                onChange={handleDataInput}
             />
             <Link to={'/'}>
                 <Button
