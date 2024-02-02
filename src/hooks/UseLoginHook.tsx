@@ -10,7 +10,7 @@ interface userLogin {
 }
 
 export const UseHookLogin = ():userLogin => {
-    const [ dataInput, setDataInput ] = useState({ username: '', password: '' })
+    const [ dataInput, setDataInput ] = useState({ username: '', password: '', age: '' })
 
     const handleDataInput = (event: React.ChangeEvent<HTMLInputElement>) => {  
         const { name, value} = event.target

@@ -18,7 +18,7 @@ export const Signin: React.FC = () =>{
                 placeholder="username"
                 type="text"
                 value={dataInput.username}
-                onChange={}
+                onChange={handleDataInput}
             />
             <Input
                 placeholder="idade"
@@ -29,7 +29,7 @@ export const Signin: React.FC = () =>{
             <Input
                 placeholder="password"
                 type="text"
-                value={dataInput.password}
+                value={dataInput.age}
                 onChange={handleDataInput}
             />
             <Link to={'/'}>
