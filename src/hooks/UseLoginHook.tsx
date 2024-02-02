@@ -5,6 +5,7 @@ interface userLogin {
     dataInput: {
         username: string,
         password: string,
+        age: string,
     }
     "handleDataInput":  (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
